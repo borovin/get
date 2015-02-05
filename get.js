@@ -1,6 +1,6 @@
 define(function(require) {
     //requirements
-    var _ = require('bower_components/lodash/dist/lodash');
+    var _ = require('bower_components/lodash/lodash');
 
     return function(object, path, args){
 
