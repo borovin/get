@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 
     describe(module.id, function(){
 
-        it('Получение неопределенного свойства', function(){
+        it('Get undefined', function(){
 
             var object = {};
 
@@ -12,7 +12,7 @@ define(function(require, exports, module) {
 
         });
 
-        it('Получение булева свойства', function(){
+        it('Get boolean', function(){
 
             var object = {
                 a: {
@@ -24,7 +24,7 @@ define(function(require, exports, module) {
 
         });
 
-        it('Получение числового свойства', function(){
+        it('Get number', function(){
 
             var object = {
                 a: {
@@ -36,7 +36,7 @@ define(function(require, exports, module) {
 
         });
 
-        it('Получение строки', function(){
+        it('Get string', function(){
 
             var object = {
                 a: {
@@ -48,7 +48,7 @@ define(function(require, exports, module) {
 
         });
 
-        it('Получение значения функции', function(){
+        it('Get function result', function(){
 
             var object = {
                 a: {
