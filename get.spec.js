@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     //requirements
-    var get = require('../get');
+    var get = require('./get.js');
 
     describe(module.id, function(){
 
