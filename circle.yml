@@ -1,16 +1,13 @@
 machine:
   node:
     version: stable
-  environment:
-    CODACY_REPO_TOKEN: 96b1360b0d9f4de999390434b1dcf4c7
 
 dependencies:
   post:
-    - npm install karma-coverage karma-junit-reporter codacy-coverage
+    - npm install karma-junit-reporter codacy-coverage
 
 test:
   override:
-    - npm test -- --reporters=coverage,junit,mocha
+    - npm test -- --reporters=junit,mocha
   post:
     - mv reporters/junit.xml $CIRCLE_TEST_REPORTS
-    - ./node_modules/codacy-coverage/bin/codacy-coverage.js < ./reporters/lcov.info
