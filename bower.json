@@ -1,13 +1,13 @@
 {
   "name": "get",
-  "main": "get.js",
+  "main": "index.js",
   "version": "0.0.1",
   "description": "Function for smart get object properties",
   "authors": [
     "a@borovin.com"
   ],
   "moduleType": [
-    "amd"
+    "commonJS"
   ],
   "license": "MIT",
   "ignore": [
@@ -18,12 +18,15 @@
     "test",
     "tests",
     "coverage",
+
+    "*.spec.js",
     "index.html",
-    "require.config.js",
     "package.json",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "circle.yml",
+    "karma.conf.js"
   ],
   "dependencies": {
-    "lodash": "^3.9.0"
+    "lodash": "^3.10.0"
   }
 }
