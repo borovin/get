@@ -7,23 +7,16 @@
     "a@borovin.com"
   ],
   "moduleType": [
-    "commonJS"
+    "node"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "tools",
-    "test",
-    "tests",
-    "coverage",
 
     "*.spec.js",
-    "index.html",
     "package.json",
-    "Gruntfile.js",
-    "circle.yml",
     "karma.conf.js"
   ],
   "dependencies": {
