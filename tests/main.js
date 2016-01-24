@@ -1,8 +1,8 @@
 var get = require('../index');
 
-describe(module.id, function(){
+describe(module.id, function () {
 
-    it('Get undefined', function(){
+    it('Get undefined', function () {
 
         var object = {};
 
@@ -10,7 +10,7 @@ describe(module.id, function(){
 
     });
 
-    it('Get boolean', function(){
+    it('Get boolean', function () {
 
         var object = {
             a: {
@@ -22,7 +22,7 @@ describe(module.id, function(){
 
     });
 
-    it('Get number', function(){
+    it('Get number', function () {
 
         var object = {
             a: {
@@ -34,7 +34,7 @@ describe(module.id, function(){
 
     });
 
-    it('Get string', function(){
+    it('Get string', function () {
 
         var object = {
             a: {
@@ -46,11 +46,11 @@ describe(module.id, function(){
 
     });
 
-    it('Get function result', function(){
+    it('Get function result', function () {
 
         var object = {
             a: {
-                b: function(){
+                b: function () {
                     return 'result';
                 }
             }

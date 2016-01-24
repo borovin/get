@@ -1,17 +1,20 @@
 var _ = require('lodash');
 
-module.exports = function(object, path){
+module.exports = function (object, path) {
 
-    if (!object || !path){
+    var attr;
+    var segments;
+
+    if (!object || !path) {
         return object;
     }
 
-    var attr = object,
-        segments = path.split('.');
+    attr = object;
+    segments = path.split('.');
 
-    _.every(segments, function(segment){
+    _.every(segments, function (segment) {
 
-        if (typeof attr[segment] === 'function'){
+        if (typeof attr[segment] === 'function') {
             attr = attr[segment].apply(object);
         } else {
             attr = attr[segment];
@@ -21,4 +24,4 @@ module.exports = function(object, path){
     });
 
     return attr;
-}
+};
