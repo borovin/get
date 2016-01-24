@@ -1,4 +1,4 @@
-var get = require('./index.js');
+var get = require('../index');
 
 describe(module.id, function(){
 
