@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var every = require('lodash/every');
 
 module.exports = function (object, path) {
 
@@ -12,7 +12,7 @@ module.exports = function (object, path) {
     attr = object;
     segments = path.split('.');
 
-    _.every(segments, function (segment) {
+    every(segments, function (segment) {
 
         if (typeof attr[segment] === 'function') {
             attr = attr[segment].apply(object);
