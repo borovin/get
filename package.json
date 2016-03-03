@@ -1,11 +1,11 @@
 {
-  "version": "1.1.0",
-  "name": "get",
+  "version": "1.1.1",
+  "name": "@basket/get",
   "main": "index.js",
-  "description": "Function for smart get object properties",
+  "description": "Smart getter for js objects",
   "repository": {
     "type": "git",
-    "url": "https://github.com/borovin/get.git"
+    "url": "git@github.com:basketjs/get.git"
   },
   "scripts": {
     "start": "node app.js",
