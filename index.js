@@ -1,27 +1,25 @@
-var every = require('lodash/every');
+import every from 'lodash/every';
 
-module.exports = function (object, path) {
+export default function (object, path) {
+  let attr;
 
-    var attr;
-    var segments;
+  if (!object || !path) {
+    return object;
+  }
 
-    if (!object || !path) {
-        return object;
+  attr = object;
+
+  const segments = path.split('.');
+
+  every(segments, (segment) => {
+    if (typeof attr[segment] === 'function') {
+      attr = attr[segment].apply(object);
+    } else {
+      attr = attr[segment];
     }
 
-    attr = object;
-    segments = path.split('.');
-
-    every(segments, function (segment) {
-
-        if (typeof attr[segment] === 'function') {
-            attr = attr[segment].apply(object);
-        } else {
-            attr = attr[segment];
-        }
-
-        return attr;
-    });
-
     return attr;
-};
+  });
+
+  return attr;
+}

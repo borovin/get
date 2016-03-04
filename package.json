@@ -1,5 +1,5 @@
 {
-  "version": "1.1.2",
+  "version": "1.2.0",
   "name": "@basket/get",
   "main": "index.js",
   "description": "Smart getter for js objects",
@@ -9,16 +9,17 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "node ./node_modules/testem/testem.js ci",
+    "test": "npm run testem-ci && npm run lint -s",
     "testem": "node ./node_modules/testem/testem.js",
-    "lint": "node ./node_modules/eslint/bin/eslint.js ."
+    "testem-ci": "node ./node_modules/testem/testem.js ci",
+    "lint": "node ./node_modules/eslint/bin/eslint.js . --fix"
   },
   "devDependencies": {
     "eslint": "^2.0.0",
-    "eslint-config-yandex": "^1.0.5",
+    "eslint-config-airbnb": "^6.0.2",
     "express": "^4.13.4",
-    "testem": "^1.2.2",
-    "playground": "github:borovin/playground"
+    "playground": "github:borovin/playground",
+    "testem": "^1.2.2"
   },
   "dependencies": {
     "lodash": "^4.0.0",

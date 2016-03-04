@@ -1,63 +1,51 @@
-var get = require('../index');
+import get from '../index';
 
-describe(module.id, function () {
+describe('Get function main tests', () => {
+  it('Get undefined', () => {
+    const object = {};
 
-    it('Get undefined', function () {
+    expect(get(object, 'a.b')).toBeUndefined();
+  });
 
-        var object = {};
+  it('Get boolean', () => {
+    const object = {
+      a: {
+        b: false,
+      },
+    };
 
-        expect(get(object, 'a.b')).toBeUndefined();
+    expect(get(object, 'a.b')).toBeFalsy();
+  });
 
-    });
+  it('Get number', () => {
+    const object = {
+      a: {
+        b: 1,
+      },
+    };
 
-    it('Get boolean', function () {
+    expect(get(object, 'a.b')).toBe(1);
+  });
 
-        var object = {
-            a: {
-                b: false
-            }
-        };
+  it('Get string', () => {
+    const object = {
+      a: {
+        b: 'b',
+      },
+    };
 
-        expect(get(object, 'a.b')).toBeFalsy();
+    expect(get(object, 'a.b')).toBe('b');
+  });
 
-    });
+  it('Get function result', () => {
+    const object = {
+      a: {
+        b() {
+          return 'result';
+        },
+      },
+    };
 
-    it('Get number', function () {
-
-        var object = {
-            a: {
-                b: 1
-            }
-        };
-
-        expect(get(object, 'a.b')).toBe(1);
-
-    });
-
-    it('Get string', function () {
-
-        var object = {
-            a: {
-                b: 'b'
-            }
-        };
-
-        expect(get(object, 'a.b')).toBe('b');
-
-    });
-
-    it('Get function result', function () {
-
-        var object = {
-            a: {
-                b: function () {
-                    return 'result';
-                }
-            }
-        };
-
-        expect(get(object, 'a.b')).toBe('result');
-
-    });
-
+    expect(get(object, 'a.b')).toBe('result');
+  });
 });
