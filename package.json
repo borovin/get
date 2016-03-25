@@ -1,18 +1,18 @@
 {
-  "version": "1.2.1",
-  "name": "@basket/get",
+  "version": "1.2.2",
+  "name": "get",
   "main": "index.js",
   "description": "Smart getter for js objects",
   "repository": {
     "type": "git",
-    "url": "git@github.com:basketjs/get.git"
+    "url": "git@github.com:borovin/get.git"
   },
   "scripts": {
     "start": "node app.js",
     "test": "npm run testem-ci && npm run lint -s",
     "testem": "node ./node_modules/testem/testem.js",
     "testem-ci": "node ./node_modules/testem/testem.js ci",
-    "lint": "node ./node_modules/eslint/bin/eslint.js . --fix"
+    "lint": "node ./node_modules/eslint/bin/eslint.js ."
   },
   "devDependencies": {
     "eslint": "^2.0.0",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "lodash": "^4.0.0",
-    "steal": "^0.14.0"
+    "steal": "^0.15.0"
   },
   "system": {
     "npmIgnore": [
