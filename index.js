@@ -1,4 +1,4 @@
-import every from 'lodash/every';
+import { every } from 'lodash-es';
 
 export default function (object, path) {
   let attr;
