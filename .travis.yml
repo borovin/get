@@ -15,3 +15,9 @@ after_script:
       if [ "$TEST_TYPE" == coverage ]; then
         bash <(curl -s https://codecov.io/bash)
       fi
+deploy:
+  provider: npm
+  api_key: "91dd9ac9-5892-4814-a80f-8bca31d97f5b"
+  skip_cleanup: true
+  on:
+      branch: master
