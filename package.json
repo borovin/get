@@ -8,27 +8,28 @@
     "url": "git@github.com:borovin/get.git"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "npm run testem-ci && npm run lint -s",
-    "testem": "node ./node_modules/testem/testem.js",
-    "testem-ci": "node ./node_modules/testem/testem.js ci -P 5",
-    "lint": "node ./node_modules/eslint/bin/eslint.js ."
-  },
-  "devDependencies": {
-    "eslint": "^2.0.0",
-    "eslint-config-airbnb": "^6.0.2",
-    "testem": "^1.2.2"
-  },
-  "dependencies": {
-    "lodash-es": "^4.6.1",
-    "steal": "^0.15.0"
-  },
-  "system": {
-    "npmIgnore": [
-      "devDependencies"
-    ],
-    "npmAlgorithm": "flat"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:codestyle": "eslint ."
   },
   "author": "a@borovin.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "jest": "^16.0.2"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
+  },
+  "jest": {
+    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/__tests__/**", "!coverage/**"],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
 }
