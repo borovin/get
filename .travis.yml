@@ -17,7 +17,8 @@ after_script:
       fi
 deploy:
   provider: npm
-  api_key: "91dd9ac9-5892-4814-a80f-8bca31d97f5b"
+  api_key: $NPM_AUTH_TOKEN
+  email: "npmbasket@gmail.com"
   skip_cleanup: true
   on:
       branch: master
