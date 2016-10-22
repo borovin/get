@@ -1,6 +1,7 @@
 const _get = require('lodash.get');
 
 function get(object, path) {
+
     if (!object || !path) {
         return object;
     }
