@@ -15,11 +15,14 @@ after_script:
       if [ "$TEST_TYPE" == coverage ]; then
         bash <(curl -s https://codecov.io/bash)
       fi
+branches:
+  only:
+  - master
+  - dev
 deploy:
   provider: npm
   api_key: $NPM_AUTH_TOKEN
   email: "npmbasket@gmail.com"
   skip_cleanup: true
-  tags: true
   on:
       branch: master
