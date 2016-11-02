@@ -1,4 +1,4 @@
-const _get = require('lodash.get');
+const _get = require('lodash/get');
 
 function get(object, path) {
 

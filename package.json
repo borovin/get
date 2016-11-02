@@ -1,5 +1,5 @@
 {
-  "version": "1.2.5",
+  "version": "1.2.6",
   "name": "@basket/get",
   "main": "index.js",
   "description": "Smart getter for js objects",
@@ -21,7 +21,7 @@
     "jest": "^16.0.2"
   },
   "dependencies": {
-    "lodash.get": "^4.4.2"
+    "lodash": "^4.16.6"
   },
   "jest": {
     "collectCoverageFrom": [
