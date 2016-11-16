@@ -48,11 +48,13 @@ it('should get function result', () => {
     const object = {
         a: {
             b() {
-                return 'result';
+                return {
+                    c: 'd'
+                };
             },
         },
     };
 
-    expect(get(object, 'a.b')).toBe('result');
+    expect(get(object, 'a.b.c')).toBe('d');
 });
 
