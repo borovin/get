@@ -1,18 +1,27 @@
-const _get = require('lodash/get');
+const every = require('lodash/every');
 
 function get(object, path) {
+    let attr;
 
     if (!object || !path) {
         return object;
     }
 
-    let result = _get(object, path);
+    attr = object;
 
-    if (typeof result === 'function') {
-        result = result.apply(object);
-    }
+    const segments = path.split('.');
 
-    return result;
+    every(segments, (segment) => {
+        if (typeof attr[segment] === 'function') {
+            attr = attr[segment].apply(object);
+        } else {
+            attr = attr[segment];
+        }
+
+        return attr;
+    });
+
+    return attr;
 }
 
 module.exports = get;
